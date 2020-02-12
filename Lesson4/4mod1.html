@@ -1,0 +1,85 @@
+<pre>
+<font color="#434f54">&#47;&#47;</font><u><font color="#434f54">www.elegoo.com</font></u><font color="#434f54"></font>
+<font color="#434f54">&#47;&#47;2016.12.8</font>
+
+<font color="#434f54">&#47;&#47; Define Pins</font>
+<font color="#5e6d03">#define</font> <font color="#000000">BLUE</font> <font color="#000000">3</font>
+<font color="#5e6d03">#define</font> <font color="#000000">GREEN</font> <font color="#000000">5</font>
+<font color="#5e6d03">#define</font> <font color="#000000">RED</font> <font color="#000000">6</font>
+
+<font color="#00979c">void</font> <font color="#5e6d03">setup</font><font color="#000000">(</font><font color="#000000">)</font>
+<font color="#000000">{</font>
+<font color="#d35400">pinMode</font><font color="#000000">(</font><font color="#000000">RED</font><font color="#434f54">,</font> <font color="#00979c">OUTPUT</font><font color="#000000">)</font><font color="#000000">;</font>
+<font color="#d35400">pinMode</font><font color="#000000">(</font><font color="#000000">GREEN</font><font color="#434f54">,</font> <font color="#00979c">OUTPUT</font><font color="#000000">)</font><font color="#000000">;</font>
+<font color="#d35400">pinMode</font><font color="#000000">(</font><font color="#000000">BLUE</font><font color="#434f54">,</font> <font color="#00979c">OUTPUT</font><font color="#000000">)</font><font color="#000000">;</font>
+<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">RED</font><font color="#434f54">,</font> <font color="#00979c">HIGH</font><font color="#000000">)</font><font color="#000000">;</font>
+<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">GREEN</font><font color="#434f54">,</font> <font color="#00979c">LOW</font><font color="#000000">)</font><font color="#000000">;</font>
+<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">BLUE</font><font color="#434f54">,</font> <font color="#00979c">LOW</font><font color="#000000">)</font><font color="#000000">;</font>
+<font color="#000000">}</font>
+
+<font color="#434f54">&#47;&#47; define variables</font>
+<font color="#00979c">int</font> <font color="#000000">redValue</font><font color="#000000">;</font>
+<font color="#00979c">int</font> <font color="#000000">greenValue</font><font color="#000000">;</font>
+<font color="#00979c">int</font> <font color="#000000">blueValue</font><font color="#000000">;</font>
+
+<font color="#434f54">&#47;&#47; main loop</font>
+<font color="#00979c">void</font> <font color="#5e6d03">loop</font><font color="#000000">(</font><font color="#000000">)</font>
+<font color="#000000">{</font>
+<font color="#5e6d03">#define</font> <font color="#000000">delayTime</font> <font color="#000000">500</font> <font color="#434f54">&#47;&#47; fading time between colors</font>
+
+<font color="#000000">redValue</font> <font color="#434f54">=</font> <font color="#000000">10</font><font color="#000000">;</font> <font color="#434f54">&#47;&#47; choose a value between 1 and 255 to change the color.</font>
+<font color="#000000">greenValue</font> <font color="#434f54">=</font> <font color="#000000">0</font><font color="#000000">;</font>
+<font color="#000000">blueValue</font> <font color="#434f54">=</font> <font color="#000000">0</font><font color="#000000">;</font>
+
+<font color="#434f54">&#47;&#47; this is unnecessary as we&#39;ve either turned on RED in SETUP</font>
+<font color="#434f54">&#47;&#47; or in the previous loop ... regardless, this turns RED off</font>
+<font color="#434f54">&#47;&#47; analogWrite(RED, 0);</font>
+<font color="#434f54">&#47;&#47; delay(1000);</font>
+
+<font color="#5e6d03">for</font><font color="#000000">(</font><font color="#00979c">int</font> <font color="#000000">i</font> <font color="#434f54">=</font> <font color="#000000">0</font><font color="#000000">;</font> <font color="#000000">i</font> <font color="#434f54">&lt;</font> <font color="#000000">10</font><font color="#000000">;</font> <font color="#000000">i</font> <font color="#434f54">+=</font> <font color="#000000">1</font><font color="#000000">)</font> <font color="#434f54">&#47;&#47; fades out red bring green full when i=255</font>
+<font color="#000000">{</font>
+<font color="#000000">redValue</font> <font color="#434f54">-=</font> <font color="#000000">1</font><font color="#000000">;</font>
+<font color="#000000">greenValue</font> <font color="#434f54">+=</font> <font color="#000000">1</font><font color="#000000">;</font>
+<font color="#434f54">&#47;&#47; The following was reversed, counting in the wrong directions</font>
+<font color="#434f54">&#47;&#47; analogWrite(RED, 255 - redValue);</font>
+<font color="#434f54">&#47;&#47; analogWrite(GREEN, 255 - greenValue);</font>
+<font color="#d35400">analogWrite</font><font color="#000000">(</font><font color="#000000">RED</font><font color="#434f54">,</font> <font color="#000000">redValue</font><font color="#000000">)</font><font color="#000000">;</font>
+<font color="#d35400">analogWrite</font><font color="#000000">(</font><font color="#000000">GREEN</font><font color="#434f54">,</font> <font color="#000000">greenValue</font><font color="#000000">)</font><font color="#000000">;</font>
+<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">delayTime</font><font color="#000000">)</font><font color="#000000">;</font>
+<font color="#000000">}</font>
+
+<font color="#000000">redValue</font> <font color="#434f54">=</font> <font color="#000000">0</font><font color="#000000">;</font>
+<font color="#000000">greenValue</font> <font color="#434f54">=</font> <font color="#000000">10</font><font color="#000000">;</font>
+<font color="#000000">blueValue</font> <font color="#434f54">=</font> <font color="#000000">0</font><font color="#000000">;</font>
+
+<font color="#5e6d03">for</font><font color="#000000">(</font><font color="#00979c">int</font> <font color="#000000">i</font> <font color="#434f54">=</font> <font color="#000000">0</font><font color="#000000">;</font> <font color="#000000">i</font> <font color="#434f54">&lt;</font> <font color="#000000">10</font><font color="#000000">;</font> <font color="#000000">i</font> <font color="#434f54">+=</font> <font color="#000000">1</font><font color="#000000">)</font> <font color="#434f54">&#47;&#47; fades out green bring blue full when i=255</font>
+<font color="#000000">{</font>
+<font color="#000000">greenValue</font> <font color="#434f54">-=</font> <font color="#000000">1</font><font color="#000000">;</font>
+<font color="#000000">blueValue</font> <font color="#434f54">+=</font> <font color="#000000">1</font><font color="#000000">;</font>
+<font color="#434f54">&#47;&#47; The following was reversed, counting in the wrong directions</font>
+<font color="#434f54">&#47;&#47; analogWrite(GREEN, 255 - greenValue);</font>
+<font color="#434f54">&#47;&#47; analogWrite(BLUE, 255 - blueValue);</font>
+<font color="#d35400">analogWrite</font><font color="#000000">(</font><font color="#000000">GREEN</font><font color="#434f54">,</font> <font color="#000000">greenValue</font><font color="#000000">)</font><font color="#000000">;</font>
+<font color="#d35400">analogWrite</font><font color="#000000">(</font><font color="#000000">BLUE</font><font color="#434f54">,</font> <font color="#000000">blueValue</font><font color="#000000">)</font><font color="#000000">;</font>
+<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">delayTime</font><font color="#000000">)</font><font color="#000000">;</font>
+<font color="#000000">}</font>
+
+<font color="#000000">redValue</font> <font color="#434f54">=</font> <font color="#000000">0</font><font color="#000000">;</font>
+<font color="#000000">greenValue</font> <font color="#434f54">=</font> <font color="#000000">0</font><font color="#000000">;</font>
+<font color="#000000">blueValue</font> <font color="#434f54">=</font> <font color="#000000">10</font><font color="#000000">;</font>
+
+<font color="#5e6d03">for</font><font color="#000000">(</font><font color="#00979c">int</font> <font color="#000000">i</font> <font color="#434f54">=</font> <font color="#000000">0</font><font color="#000000">;</font> <font color="#000000">i</font> <font color="#434f54">&lt;</font> <font color="#000000">10</font><font color="#000000">;</font> <font color="#000000">i</font> <font color="#434f54">+=</font> <font color="#000000">1</font><font color="#000000">)</font> <font color="#434f54">&#47;&#47; fades out blue bring red full when i=255</font>
+<font color="#000000">{</font>
+<font color="#434f54">&#47;&#47; The following code has been rearranged to match the other two similar sections</font>
+<font color="#000000">blueValue</font> <font color="#434f54">-=</font> <font color="#000000">1</font><font color="#000000">;</font>
+<font color="#000000">redValue</font> <font color="#434f54">+=</font> <font color="#000000">1</font><font color="#000000">;</font>
+<font color="#434f54">&#47;&#47; The following was reversed, counting in the wrong directions</font>
+<font color="#434f54">&#47;&#47; analogWrite(BLUE, 255 - blueValue);</font>
+<font color="#434f54">&#47;&#47; analogWrite(RED, 255 - redValue);</font>
+<font color="#d35400">analogWrite</font><font color="#000000">(</font><font color="#000000">BLUE</font><font color="#434f54">,</font> <font color="#000000">blueValue</font><font color="#000000">)</font><font color="#000000">;</font>
+<font color="#d35400">analogWrite</font><font color="#000000">(</font><font color="#000000">RED</font><font color="#434f54">,</font> <font color="#000000">redValue</font><font color="#000000">)</font><font color="#000000">;</font>
+<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">delayTime</font><font color="#000000">)</font><font color="#000000">;</font>
+<font color="#000000">}</font>
+<font color="#000000">}</font>
+
+</pre>
