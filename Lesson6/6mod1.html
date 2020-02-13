@@ -1,0 +1,40 @@
+<pre>
+<font color="#434f54">&#47;&#47;</font><u><font color="#434f54">www.elegoo.com</font></u><font color="#434f54"></font>
+<font color="#434f54">&#47;&#47;2016.12.08</font>
+
+<font color="#00979c">int</font> <font color="#000000">buzzer</font> <font color="#434f54">=</font> <font color="#000000">12</font><font color="#000000">;</font><font color="#434f54">&#47;&#47;the pin of the active buzzer</font>
+<font color="#00979c">void</font> <font color="#5e6d03">setup</font><font color="#000000">(</font><font color="#000000">)</font>
+<font color="#000000">{</font>
+ <font color="#d35400">pinMode</font><font color="#000000">(</font><font color="#000000">buzzer</font><font color="#434f54">,</font><font color="#00979c">OUTPUT</font><font color="#000000">)</font><font color="#000000">;</font><font color="#434f54">&#47;&#47;initialize the buzzer pin as an output</font>
+<font color="#000000">}</font>
+<font color="#00979c">void</font> <font color="#5e6d03">loop</font><font color="#000000">(</font><font color="#000000">)</font>
+<font color="#000000">{</font>
+<font color="#434f54">&#47;&#47; unsigned char i;</font>
+<font color="#434f54">&#47;&#47; while(1)</font>
+<font color="#434f54">&#47;&#47; {</font>
+<font color="#434f54">&#47;&#47; &nbsp;&nbsp;&#47;&#47;output an frequency</font>
+<font color="#434f54">&#47;&#47; &nbsp;&nbsp;for(i=0;i&lt;80;i++)</font>
+<font color="#434f54">&#47;&#47; &nbsp;&nbsp;{</font>
+ &nbsp;&nbsp;&nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">buzzer</font><font color="#434f54">,</font><font color="#00979c">HIGH</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">3000</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">buzzer</font><font color="#434f54">,</font><font color="#00979c">LOW</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">3000</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;<font color="#d35400">exit</font><font color="#000000">(</font><font color="#000000">0</font><font color="#000000">)</font><font color="#000000">;</font>
+ &nbsp;&nbsp;&nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">buzzer</font><font color="#434f54">,</font><font color="#00979c">HIGH</font><font color="#000000">)</font><font color="#000000">;</font>
+
+<font color="#434f54">&#47;&#47; &nbsp;&nbsp;&nbsp;delay(1);&#47;&#47;wait for 1ms</font>
+<font color="#434f54">&#47;&#47; &nbsp;&nbsp;&nbsp;digitalWrite(buzzer,LOW);</font>
+<font color="#434f54">&#47;&#47; &nbsp;&nbsp;&nbsp;delay(1);&#47;&#47;wait for 1ms</font>
+<font color="#434f54">&#47;&#47; &nbsp;&nbsp;&nbsp;}</font>
+ &nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47;output another frequency</font>
+<font color="#434f54">&#47;&#47; &nbsp;&nbsp;&nbsp;&nbsp;for(i=0;i&lt;100;i++)</font>
+<font color="#434f54">&#47;&#47; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</font>
+<font color="#434f54">&#47;&#47; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;digitalWrite(buzzer,HIGH);</font>
+<font color="#434f54">&#47;&#47; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;delay(2);&#47;&#47;wait for 2ms</font>
+<font color="#434f54">&#47;&#47; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;digitalWrite(buzzer,LOW);</font>
+<font color="#434f54">&#47;&#47; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;delay(2);&#47;&#47;wait for 2ms</font>
+<font color="#434f54">&#47;&#47; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</font>
+<font color="#434f54">&#47;&#47; &nbsp;}</font>
+<font color="#000000">}</font> 
+
+</pre>
